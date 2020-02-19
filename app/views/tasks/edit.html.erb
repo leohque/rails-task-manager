@@ -1,4 +1,10 @@
 <h1>Edit Task</h1>
 <%= render 'form', task: @task %>
-<%= link_to "Delete Task", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-<%= link_to "All Tasks", tasks_path, class: 'btn btn-success' %>
+
+<%= link_to tasks_path(@task), class: 'm-2' do %>
+<%= icon('fa', 'undo')%> Back to All Tasks
+<% end %>
+
+<%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure?" } do %>
+<%= icon('fas', 'trash-alt')%> Delete
+<% end %>

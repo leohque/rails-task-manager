@@ -1,3 +1,5 @@
 <h1>Add a Task</h1>
 <%= render 'form', restaurant: @restaurant %>
-<%= link_to "[ all tasks ]", tasks_path %>
+<%= link_to tasks_path do %>
+<%= icon('fa', 'undo')%> Back to All Tasks
+<% end %>

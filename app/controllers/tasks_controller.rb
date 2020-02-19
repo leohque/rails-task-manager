@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
 
-    redirect_to task_path(@task)
+    redirect_to tasks_path
   end
 
   def edit
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
     # (Patch) edit a task (mark as completed / update title & details)
     @task.update(task_params)
 
-    redirect_to task_path(@task)
+    redirect_to tasks_path
   end
 
   def destroy
