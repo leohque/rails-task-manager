@@ -1,9 +1,10 @@
 <h1>Task Manager</h1>
-<ul>
 <% @tasks.each do |task| %>
-<li><%= link_to "#{task.title}", task_path(task) %>: <%= task.details %> (<%= task.completed %>)
-  || <%= link_to "[ edit ]", task_edit_path(task.id) %> <%= link_to "[ delete ]", task_path(task),
+<p><%= check_box_tag("check", value = true, checked = task.completed, disabled: true) %>&nbsp;
+<%= link_to "#{task.title}", task_path(task) %> <%= link_to '[ edit ]', task_edit_path(task.id) %> <%= link_to "[ delete ]", task_path(task),
       method: :delete,
-      data: { confirm: "Are you sure?" } %></li>
+      data: { confirm: "Are you sure?" } %><br>
+  <%= task.details %> (<%= task.completed %>)</p>
 <% end %>
-</ul>
+<%= link_to "Create Task", tasks_new_path, class: 'btn btn-info' %>
+<i class="fas fa-edit"></i>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # As a user, I can edit a task (mark as completed / update title & details)
   get 'tasks/:id/edit', to: 'tasks#edit', as: :task_edit
-  patch 'tasks', to: 'tasks#update'
+  patch 'tasks/:id', to: 'tasks#update'
 
   # As a user, I can remove a task
   delete 'tasks/:id', to: 'tasks#destroy'

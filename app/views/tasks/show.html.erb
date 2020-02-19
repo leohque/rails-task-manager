@@ -1,6 +1,6 @@
 <h1>Task: <%= @task.title %></h1>
 <h2>Details: <%= @task.details %></h2>
 
-<%= link_to "[ edit ]", task_edit_path %>
-<%= link_to "[ delete ]", task_path(@task), method: :delete, data: { confirm: "Are you sure?" } %>
-<%= link_to "[ all tasks ]", tasks_path %>
+<%= link_to "Edit Task", task_edit_path, class: 'btn btn-info' %>
+<%= link_to "Delete Task", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+<%= link_to "All Tasks", tasks_path, class: 'btn btn-success' %>
