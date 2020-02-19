@@ -3,10 +3,10 @@
   <span><%= check_box_tag("check", value = true, checked = task.completed, disabled: true, class: 'm-1') %>
   <%= link_to "#{task.title}", task_path(task) %>
   <%= link_to task_edit_path(task) do %>
-  <%= icon('fas', 'edit')%>
+  <%= icon('fas', 'edit') %>
   <% end %>
   <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
-  <%= icon('fas', 'trash-alt')%>
+  <%= icon('fas', 'trash-alt') %>
   <% end %></span>
   <span class="task-details d-block"><%= task.details %></span>
 </p>
