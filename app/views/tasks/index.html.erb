@@ -1,17 +1,29 @@
-<% @tasks.each do |task| %>
-<p>
-  <span><%= check_box_tag("check", value = true, checked = task.completed, disabled: true, class: 'm-1') %>
-  <%= link_to "#{task.title}", task_path(task) %>
-  <%= link_to task_edit_path(task) do %>
-  <%= icon('fas', 'edit') %>
+<div id="simpleList" class="w-100 m-2 d-flex flex-wrap justify-content-center">
+  <% @tasks.each do |task| %>
+    <% @colors.shuffle! %>
+    <div class="sticky w-25 ml-3 mb-3 <%= @colors[0] %> list-group-item shadow">
+      <div class="sticky-header d-flex justify-content-between pb-1">
+        <div>
+          <%= check_box_tag("check", value = true, checked = task.completed, disabled: true, class: 'm-1') %>
+        </div>
+        <div>
+          <%= link_to task_edit_path(task) do %>
+            <%= icon('fas', 'edit') %>
+          <% end %>
+          <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
+            <%= icon('fas', 'trash-alt') %>
+          <% end %>
+        </div>
+      </div>
+      <div class="sticky-info p-4">
+        <h4>
+          <%= link_to "#{task.title}", task_path(task) %>
+        </h4>
+        <span class="task-details d-block">
+          <%= task.details %>
+        </span>
+      </div>
+    </div>
   <% end %>
-  <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
-  <%= icon('fas', 'trash-alt') %>
-  <% end %></span>
-  <span class="task-details d-block"><%= task.details %></span>
-</p>
-<% end %>
-
-<%= link_to tasks_new_path, class: 'btn btn-success' do %>
-<%= icon('fas', 'edit')%> Create Task
-<% end %>
+</div>
+<script>Sortable.create(simpleList, { /* options */ });</script>

@@ -9,9 +9,19 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>📌 Task Manager</h1>
-      <%= yield %>
+    <nav class="navbar sticky-top bg-white">
+      <p>~</p>
+      <div class="navbar-brand text-center">
+        <h1>Don't Go Forgetting Again<br>📌🧐</h1>
+        <%= link_to tasks_new_path, class: 'btn btn-success' do %>
+        <%= icon('fas', 'edit')%> Create Task
+        <% end %>
+      </div>
+      <p>~</p>
+    </nav>
+    <div>
+        <%= yield %>
     </div>
   </body>
+
 </html>

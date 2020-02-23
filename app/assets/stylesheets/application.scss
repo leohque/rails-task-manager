@@ -18,16 +18,12 @@
 @import "font-awesome";
 
 body {
-  background: rgb(29,99,49);
+  background: url('sky.jpg');
+  background-size:auto;
+  background-repeat:repeat-y;
 }
 
-.container {
-  background-color:white;
-  margin-top:24px;
-  padding:24px;
-  border-radius:5px;
-  box-shadow:0 1px 88px #000;
-}
+.navbar { overflow:scroll; }
 
 a {
   color: rgba(0,0,0,0.8);
@@ -37,6 +33,55 @@ a:hover {
   color: rgba(32,136,56,1)
 }
 
+
+.card-info {
+  height:200px;
+  overflow:scroll;
+}
+
+.sticky {
+  height:200px;
+  cursor:grabbing;
+}
+
+.sticky-info {
+  overflow:scroll;
+  height:140px !important;
+}
+
 .task-details {
   color: rgba(0,0,0,0.8);
+}
+
+.transparent-bg {
+  background: rgba(255,255,255,0.6);
+}
+
+
+/* Tablets & Mobile Landscape */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .sticky h4 {font-size:18px;}
+
+}
+
+/* Mobiles: (Portrait) */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .navbar h1 {
+    font-size:24px;
+  }
+
+  .card {
+    width:85% !important;
+  }
+
+  .sticky {
+    width:180px !important;
+
+    h4 { font-size: 16px; }
+  }
+
 }

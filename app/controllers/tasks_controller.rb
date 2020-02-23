@@ -6,6 +6,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @colors = %w[bg-warning bg-success bg-info bg-light]
     # list tasks
   end
 
