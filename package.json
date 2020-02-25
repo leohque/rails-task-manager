@@ -2,9 +2,13 @@
   "name": "rails-task-manager",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "3.5",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "sortablejs": "^1.10.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
   }
 }
