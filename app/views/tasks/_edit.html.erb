@@ -1,0 +1,11 @@
+<%= form_for task, html: {class: 'form-group'} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.label :details %>
+  <%= f.text_field :details, class: 'form-control' %>
+  <% unless f.object.new_record? %>
+    <%= f.check_box :completed %> Complete
+  <% end %>
+  <%= f.button'<i class="fa fa-save" aria-hidden="true"></i> Save'.html_safe, class: "form-control btn btn-success" %>
+
+<% end %>
