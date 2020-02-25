@@ -15,9 +15,7 @@ import 'bootstrap';
 import 'sortablejs';
 
 import $ from 'jquery';
-import Sortable, { MultiDrag, Swap } from 'sortablejs';
-// global export
-window.Sortable = Sortable;
+import Sortable, { Swap } from 'sortablejs';
 
 
 $(document).ready(function() {
